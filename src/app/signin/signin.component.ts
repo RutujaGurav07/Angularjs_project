@@ -23,7 +23,5 @@ signin=new Signin();
       password :'',
     })
   }
-  forgot_pass(){
-    this.router.navigate(['/forgot']);
-  }
+  
 }
