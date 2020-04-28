@@ -36,20 +36,20 @@
 
               <div class="form-group ">
                 <label
-                       for="passwordId">Password</label>
+                       for="password_Id">Password</label>
                 <div class="col">
                   <input class="form-control"
-                         id="passwordId"
+                         id="password_Id"
                          type="password"
                          placeholder="password (required)"
-                         formControlName="passwordId"
-                         [ngClass]="{'is-invalid': (signinForm.get('password').touched || signinForm.get('userName').dirty) && !signinForm.get('userName').valid }" />
+                         formControlName="password"
+                          />
                   <span class="invalid-feedback">
                     <span *ngIf="signinForm.get('password').errors?.required">
                       Please enter your password name.
                     </span>
                   </span>
-                  <div class ="x"><a  routerLink="./forgot"> Forgot password ?</a></div>
+                  <div  class="nav-item"><a routerLink="/forgot" class="nav-link" routerLinkActive="active">forgot password?</a></div>
                 </div>
               </div>
               <br>
