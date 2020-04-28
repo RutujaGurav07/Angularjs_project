@@ -23,15 +23,15 @@
                             {{showImage ? 'Hide' : "Show"}} Image
                         </button>
                     </th>
-                    <th>Product</th>
-                    <th>Code</th>
-                    <th>Available</th>
-                    <th>Price</th>
-                    <th>5 Star Rating</th>
+                    <th (click)='sort("productName")'  >Product <span [ngClass]="{'fa-sort-asc': currentSort=='productName' && sortAsc,'fa-sort-desc': currentSort=='productName' &&  !sortAsc}" class="fa"></span></th>
+                    <th (click)='sort("productCode")' >Code <span [ngClass]="{'fa-sort-asc': currentSort=='productCode' && sortAsc,'fa-sort-desc': currentSort=='productCode' &&  !sortAsc}" class="fa"></span></th>
+                    <th (click)='sort("releaseDate")'>Available <span [ngClass]="{'fa-sort-asc': currentSort=='releaseDate' && sortAsc,'fa-sort-desc': currentSort=='releaseDate' &&  !sortAsc}" class="fa"></span></th>
+                    <th (click)='sort("price")'>Price <span [ngClass]="{'fa-sort-asc': currentSort=='price' && sortAsc,'fa-sort-desc': currentSort=='price' &&  !sortAsc}" class="fa"></span></th>
+                    <th (click)='sort("starRating")'>5 Star Rating <span [ngClass]="{'fa-sort-asc': currentSort=='starRating' && sortAsc,'fa-sort-desc': currentSort=='starRating' &&  !sortAsc}" class="fa"></span></th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let product of filteredProducts'>
+                <tr *ngFor="let product of filteredProducts | sortBy: sortString:currentSort">
                     <td>
                         <img *ngIf="showImage" [src]='product.imageUrl' [title]='product.productName'
                             [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
@@ -41,7 +41,7 @@
                             {{product.productName }}
                         </a>
                     </td>
-                    <td>{{product.productCode | lowercase | convertToSpaces :'-'}}</td>
+                    <td>{{product.productCode | lowercase | convertToSpaces :'-'}}</td> 
                     <td>{{product.releaseDate }}</td>
                     <td>{{product.price | currency : 'INR':'symbol':'1.2-2'}}</td>
                     <td>

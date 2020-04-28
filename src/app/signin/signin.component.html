@@ -1,0 +1,65 @@
+<br>
+<div class ="card" style="width: 25rem;">
+    <div class ="card-header">
+        {{pageTitle}}
+    </div>
+    <div class ="card-body">
+    <div>
+            <img src ="assets/image/iogin.jpg"   class="center" 
+            style="width:100px">
+        </div>
+        <br>
+        <div class="container">
+            
+            <form novalidate
+            [formGroup]="signinForm">
+            <div class="form-group ">
+                <label
+                       for="userNameId">User name</label>
+                <div class="col">
+                  <input class="form-control"
+                         id="userNameId"
+                         type="text"
+                         placeholder="username (required)"
+                         formControlName="userName"
+                         [ngClass]="{'is-invalid': (signinForm.get('userName').touched || signinForm.get('userName').dirty) && !signinForm.get('userName').valid }" />
+                  <span class="invalid-feedback">
+                    <span *ngIf="signinForm.get('userName').errors?.required">
+                      Please enter your username name.
+                    </span>
+                    <span *ngIf="signinForm.get('userName').errors?.minlength">
+                      The user name must be longer than 3 characters.
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label
+                       for="passwordId">Password</label>
+                <div class="col">
+                  <input class="form-control"
+                         id="passwordId"
+                         type="password"
+                         placeholder="password (required)"
+                         formControlName="passwordId"
+                         [ngClass]="{'is-invalid': (signinForm.get('password').touched || signinForm.get('userName').dirty) && !signinForm.get('userName').valid }" />
+                  <span class="invalid-feedback">
+                    <span *ngIf="signinForm.get('password').errors?.required">
+                      Please enter your password name.
+                    </span>
+                  </span>
+                  <div class ="x"><a  routerLink="./forgot"> Forgot password ?</a></div>
+                </div>
+              </div>
+              <br>
+              <button class="btn btn-primary"  > Sign in </button>
+
+            </form>
+
+        </div>
+    </div>
+    <div class ="card-footer"><a href="url">
+      New to Acme? Create an account
+    </a></div>
+</div>
