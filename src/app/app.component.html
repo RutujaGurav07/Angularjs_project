@@ -1,4 +1,11 @@
-<div>
-  <h2>{{pageTitle}}</h2>
+<nav class ='navbar navbar-expand navbar-lightbg-light'>
+  <a class='navbar-brand'>{{pageTitle}}</a>
+  <ul class='nav nav-pills'>
+    <li> <a class ='nav-link'[routerLink]="['/welcome']">Home</a></li>
+    <li> <a class ='nav-link'[routerLink]="['/products']">Product List</a></li>
+    <li> <a class ='nav-link'[routerLink]="['/signin']">Sign In</a></li>
+</ul>
+</nav>
+<div class ="container">
+  <router-outlet></router-outlet>
 </div>
-<app-product-list></app-product-list>

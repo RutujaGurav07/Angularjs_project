@@ -16,7 +16,7 @@ export class ProductService {
     "releaseDate": "March 19, 2019",
     "price": 19.95,
     "starRating": 3.2,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "imageUrl": "assets/image/leaf_rake.jpg"
   },
   {
     "productId": 2,
@@ -25,7 +25,7 @@ export class ProductService {
     "releaseDate": "March 18, 2019",
     "price": 32.99,
     "starRating": 4.2,
-    "imageUrl": "assets/images/garden_cart.png"
+    "imageUrl": "assets/image/gardencart.jpg"
   },
   {
     "productId": 5,
@@ -34,7 +34,7 @@ export class ProductService {
     "releaseDate": "May 21, 2019",
     "price": 8.9,
     "starRating": 4.8,
-    "imageUrl": "assets/images/hammer.jpg"
+    "imageUrl": "assets/image/hammer.jpg"
   },
   {
     "productId": 8,
@@ -43,7 +43,7 @@ export class ProductService {
     "releaseDate": "May 15, 2019",
     "price": 11.55,
     "starRating": 3.7,
-    "imageUrl": "assets/images/saw.png"
+    "imageUrl": "assets/image/saw.jpg"
   },
   {
     "productId": 10,
@@ -52,7 +52,7 @@ export class ProductService {
     "releaseDate": "October 15, 2018",
     "price": 35.95,
     "starRating": 4.6,
-    "imageUrl": "assets/images/xbox-controller.png"
+    "imageUrl": "assets/image/xbox-controller.jpg"
   }
  ]
   }
