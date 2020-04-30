@@ -16,6 +16,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
     WelcomeComponent,
     SigninComponent,
     ForgotComponent,
-    CreateaccountComponent
+    CreateaccountComponent,
 
   ],
   imports: [

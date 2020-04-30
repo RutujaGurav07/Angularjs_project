@@ -3,7 +3,8 @@ export class  Createaccount{
       public ueserName = ' ',
       public email = ' ',
       public password = ' ',
-     
+      public confirmPassword = ' ',
+
       ){}
 
   }

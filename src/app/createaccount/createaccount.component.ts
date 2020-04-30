@@ -32,8 +32,8 @@ createaccount=new Createaccount();
       userName:['', [Validators.required, Validators.minLength(3)]],
       
       passwordGroup: this.fb.group({
-        password: ['', [Validators.required]],
-        confirmPassword: ['', Validators.required]
+        password:['', [Validators.required]],
+        confirmPassword:['', Validators.required]
       },{validators: passwordMatcher}),
 
      })
