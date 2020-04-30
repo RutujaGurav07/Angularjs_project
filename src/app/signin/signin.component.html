@@ -1,65 +1,54 @@
 <br>
-<div class ="card" style="width: 25rem;">
-    <div class ="card-header">
-        {{pageTitle}}
-    </div>
-    <div class ="card-body">
+<div class="card" style="width: 25rem;">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
     <div>
-            <img src ="assets/image/iogin.jpg"   class="center" 
-            style="width:100px">
+      <img src="assets/image/iogin.jpg" class="center" style="width:100px">
+    </div>
+    <br>
+    <div class="container">
+
+      <form novalidate [formGroup]="createaccountForm">
+        <div class="form-group ">
+          <label for="userNameId">User name</label>
+          <div class="col">
+            <input class="form-control" id="userNameId" type="text" placeholder="username (required)"
+              formControlName="userName"
+              [ngClass]="{'is-invalid': (createaccountForm.get('userName').touched || createaccountForm.get('userName').dirty) && !createaccountForm.get('userName').valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="createaccountForm.get('userName').errors?.required">
+                Please enter your username name.
+              </span>
+              <span *ngIf="createaccountForm.get('userName').errors?.minlength">
+                The user name must be longer than 3 characters.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <label for="password_Id">Password</label>
+          <div class="col">
+            <input class="form-control" id="password_Id" type="password" placeholder="password (required)"
+              formControlName="password" />
+            <span class="invalid-feedback">
+              <span *ngIf="createaccountForm.get('password').errors?.required">
+                Please enter your password name.
+              </span>
+            </span>
+            <div class="nav-item"><a routerLink="/forgot" class="nav-link" routerLinkActive="active">forgot
+                password?</a></div>
+          </div>
         </div>
         <br>
-        <div class="container">
-            
-            <form novalidate
-            [formGroup]="signinForm">
-            <div class="form-group ">
-                <label
-                       for="userNameId">User name</label>
-                <div class="col">
-                  <input class="form-control"
-                         id="userNameId"
-                         type="text"
-                         placeholder="username (required)"
-                         formControlName="userName"
-                         [ngClass]="{'is-invalid': (signinForm.get('userName').touched || signinForm.get('userName').dirty) && !signinForm.get('userName').valid }" />
-                  <span class="invalid-feedback">
-                    <span *ngIf="signinForm.get('userName').errors?.required">
-                      Please enter your username name.
-                    </span>
-                    <span *ngIf="signinForm.get('userName').errors?.minlength">
-                      The user name must be longer than 3 characters.
-                    </span>
-                  </span>
-                </div>
-              </div>
+        <button class="btn btn-primary"> Sign in </button>
 
-              <div class="form-group ">
-                <label
-                       for="password_Id">Password</label>
-                <div class="col">
-                  <input class="form-control"
-                         id="password_Id"
-                         type="password"
-                         placeholder="password (required)"
-                         formControlName="password"
-                          />
-                  <span class="invalid-feedback">
-                    <span *ngIf="signinForm.get('password').errors?.required">
-                      Please enter your password name.
-                    </span>
-                  </span>
-                  <div  class="nav-item"><a routerLink="/forgot" class="nav-link" routerLinkActive="active">forgot password?</a></div>
-                </div>
-              </div>
-              <br>
-              <button class="btn btn-primary"  > Sign in </button>
+      </form>
 
-            </form>
-
-        </div>
     </div>
-    <div class ="card-footer"><a href="url">
-      New to Acme? Create an account
-    </a></div>
+  </div>
+  <div class="nav-item"><a routerLink="/createaccount" class="nav-link" routerLinkActive="active">New to Acme? Create an
+      account</a></div>
 </div>

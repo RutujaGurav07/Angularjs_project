@@ -1,1 +1,38 @@
-<p>forgot works!</p>
+<br>
+<div class="card" style="width: 25rem;">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div>
+            Enter your user account's verified email address and we will send you a password reset link.
+        </div>
+        <div class="container">
+            <br>
+            <form novalidate [formGroup]="forgotForm">
+                    <div class="form-group ">
+                            <label
+                                   for="emailId">User name</label>
+                            <div class="col">
+                              <input class="form-control"
+                                     id="emailId"
+                                     type="email"
+                                     placeholder="email (required)"
+                                     formControlName="email"
+                                     [ngClass]="{'is-invalid': (forgotForm.get('email').touched || forgotForm.get('email').dirty) && !forgotForm.get('email').valid }" />
+                              <span class="invalid-feedback">
+                                <span *ngIf="forgotForm.get('email').errors?.required">
+                                  Please enter your username name.
+                                </span>
+                                <span *ngIf="forgotForm.get('email').errors?.email">
+                                  Please enter a valid email address.
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                <button class="btn btn-primary"  > Send password reset email </button>
+            </form>
+        </div>
+
+
+    </div>

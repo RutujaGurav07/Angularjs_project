@@ -14,6 +14,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { ProductDetailGuard } from './product-detail.guard';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ForgotComponent } from './forgot/forgot.component';
     ProductDetailComponent,
     WelcomeComponent,
     SigninComponent,
-    ForgotComponent
+    ForgotComponent,
+    CreateaccountComponent
 
   ],
   imports: [
@@ -44,6 +46,7 @@ import { ForgotComponent } from './forgot/forgot.component';
       },
       { path: 'signin', component: SigninComponent},
       { path: 'forgot', component: ForgotComponent},
+      { path: 'createaccount', component: CreateaccountComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class SigninComponent implements OnInit {
 pageTitle :string='Sign In';
 
-signinForm:FormGroup; 
+createaccountForm:FormGroup; 
 
 signin=new Signin();
   constructor(private fb: FormBuilder,  private route: ActivatedRoute,
@@ -18,7 +18,7 @@ signin=new Signin();
 
     
   ngOnInit(): void {
-    this.signinForm = this.fb.group({
+    this.createaccountForm = this.fb.group({
       userName:['', [Validators.required, Validators.minLength(3)]],
       password :'',
     })

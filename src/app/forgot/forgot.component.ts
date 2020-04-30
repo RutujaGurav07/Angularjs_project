@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from "@angular/forms";
+import { Forgot } from './forgot';
+
 
 
 @Component({
@@ -7,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot.component.scss']
 })
 export class ForgotComponent implements OnInit {
- 
-  constructor() { }
+  forgotForm:FormGroup;
 
-  ngOnInit(): void {
-  }
+  forgot=new Forgot();
 
+  constructor(private fb: FormBuilder,) { }
+pageTitle :string = 'Reset your Password';
+
+ngOnInit(): void {
+  this.forgotForm = this.fb.group({
+   email:['', [Validators.required, Validators.email]],
+
+  })
+}
 }
